@@ -1,5 +1,8 @@
 package arrays;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Учитывая массив целых чисел nums и целое число target, верните индексы двух чисел так, чтобы их сумма составляла target.
  * Вы можете предположить, что каждый вход будет иметь ровно одно решение, и вы не можете использовать один и тот же элемент дважды.
@@ -35,6 +38,27 @@ public class TwoSum {
                 } else {
                     j++;
                 }
+            }
+        }
+        return new int[] {-1, -1};
+    }
+
+    /**
+     * Решение #2 (hashmap)
+     * Временная сложность O(n)
+     * Память O(1)
+     */
+    public int[] findIndexes2(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            int x = target - nums[i];
+            if (map.containsKey(x) && map.get(x) != i) {
+                return new int[] {i, map.get(x)};
             }
         }
         return new int[] {-1, -1};

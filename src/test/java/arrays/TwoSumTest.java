@@ -31,6 +31,17 @@ public class TwoSumTest {
                 Arrays.toString(new int[] {0, 1}));
         assertEquals(Arrays.toString(twoSum.findIndexes(new int[] {1, 2, 3}, 7)),
                 Arrays.toString(new int[] {-1, -1}));
+
+        assertEquals(Arrays.toString(twoSum.findIndexes2(new int[] {1, 2, 3, 4, 5}, 6)),
+                Arrays.toString(new int[] {0, 4}));
+        assertEquals(Arrays.toString(twoSum.findIndexes2(new int[] {2, 7, 11, 15}, 9)),
+                Arrays.toString(new int[] {0, 1}));
+        assertEquals(Arrays.toString(twoSum.findIndexes2(new int[] {3, 2, 4}, 6)),
+                Arrays.toString(new int[] {1, 2}));
+        assertEquals(Arrays.toString(twoSum.findIndexes2(new int[] {3, 3}, 6)),
+                Arrays.toString(new int[] {0, 1}));
+        assertEquals(Arrays.toString(twoSum.findIndexes2(new int[] {1, 2, 3}, 7)),
+                Arrays.toString(new int[] {-1, -1}));
     }
 
 }
